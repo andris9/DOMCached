@@ -1,0 +1,11 @@
+DOMCached is a simple wrapper library for the use of DOM Storage provided by the modern browsers. The library is designed after the hugely popular memcached caching system, providing similar "caching" options in JavaScript in the form of local storage.
+
+While the original DOM Storage provides only methods to save and read string values, DOMCached can input and output any JSON compatible objects. DOMCached includes also support for namespaces and data expiring.
+
+DOMCached comes in two versions - as a module which requires Prototype (prototypejs.org) and in the for of a jQuery plugin. When using DOMCached as the jQuery plugin, then jquery-json plugin is also needed, since jQuery doesn't provide methods to decode/encode JSON strings.
+
+(c) 2009 Andris Reinman, FlyCom
+www.andrisreinman.com
+
+DOMCached is freely distributable under the terms of a MIT-style license.
+For details and documentation, see the DOMCached web site: http://www.domcached.com/
