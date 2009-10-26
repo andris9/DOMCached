@@ -1,5 +1,5 @@
 /**
- * ==DOMCached local storage library, version 0.1a==
+ * ==DOMCached local storage library, version 0.1b==
  * DOMCached is a simple wrapper library for the use of DOM Storage provided by the modern browsers.
  * This library is designed after the hugely popular "memcached" caching system, providing similar
  * "caching" options in JavaScript in the form of local storage.
@@ -30,7 +30,7 @@
 
 DOMCached = {
 	/* Version number */
-	version: "0.1a",
+	version: "0.1b",
 	
 	/*
 	 * This is the object, that holds the cached values

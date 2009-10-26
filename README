@@ -2,7 +2,7 @@ DOMCached is a simple wrapper library for the use of DOM Storage provided by the
 
 While the original DOM Storage provides only methods to save and read string values, DOMCached can input and output any JSON compatible objects. DOMCached includes also support for namespaces and data expiring.
 
-DOMCached comes in two versions - as a module which requires Prototype (prototypejs.org) and in the for of a jQuery plugin. When using DOMCached as the jQuery plugin, then jquery-json plugin is also needed, since jQuery doesn't provide methods to decode/encode JSON strings.
+DOMCached comes in two versions - as a module which requires Prototype (prototypejs.org) and in the form of a jQuery plugin. When using DOMCached as the jQuery plugin, then jquery-json plugin is also needed, since jQuery doesn't provide methods to decode/encode JSON strings.
 
 (c) 2009 Andris Reinman, FlyCom
 www.andrisreinman.com

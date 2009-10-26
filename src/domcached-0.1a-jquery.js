@@ -31,7 +31,7 @@
 
 	$.DOMCached = {
 		/* Version number */
-		version: "0.1a-jquery",
+		version: "0.1b-jquery",
 	
 		/*
 		 * This is the object, that holds the cached values
