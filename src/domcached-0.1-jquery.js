@@ -61,7 +61,7 @@
 					document.write('<link id="elm_domcached" style="behavior:url(#default#userData)"/>');
 					$('#elm_domcached')[0].load("domcached");
 					try{
-						var data = $('#elm_domcached')[0].getAttribute("domcached");
+					var data = $('#elm_domcached')[0].getAttribute("domcached");
 					}catch(E){var data = "{}"}
 					this.storage_service = {dom_storage:{}};
 					if(data && data.length){
@@ -135,21 +135,26 @@
 			if(typeof namespace != "string" && typeof namespace != "number"){
 				throw new TypeError('Namespace name must be string or numeric');
 			}
-			if(this.storage[namespace] && 
-			  this.storage[namespace][key] && 
-			  (!this.storage[namespace][key].time || 
-			  this.storage[namespace][key].time<(new Date()).getTime())){
+			if(this.storage[namespace] && this.storage[namespace][key]){
+			 	if (this.storage[namespace][key].time && 
+			 		this.storage[namespace][key].time<(new Date()).getTime()){
+			 			this.deleteKey(key, namespace);
+			 			return null;
+			 	}
 				return this.storage[namespace][key].value;
 			}
 			return null;
 		},
 		/**
-	 	 * Deletes a key from cache.
- 		 * @param {String} key - Key to delete. If this value is not string an exception is raised.
-	 	 * @param {String} namespace - An optional namespace for the key. This must be string, otherwise an exception is raised.
- 		 * @returns true
-	 	 */
-		'delete': function(key, namespace){
+ 	 	* Deletes a key from cache.
+ 	 	* @param {String} key - Key to delete. If this value is not string an exception is raised.
+ 	 	* @param {String} namespace - An optional namespace for the key. This must be string, otherwise an exception is raised.
+ 	 	* @returns true
+ 	 	*/
+ 		'delete': function(key, namespace){
+ 			return this.deleteKey(key, namespace);
+ 		},
+		deleteKey: function(key, namespace){
 			namespace = namespace || 'default';
 			if(typeof namespace != "string" && typeof namespace != "number"){
 				throw new TypeError('Namespace name must be string or numeric');
@@ -320,6 +325,3 @@
 	/* Initialization */
 	$.DOMCached.init();
 })(jQuery);
-
-
-
